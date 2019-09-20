@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background: lightgreen;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: perspective(1000px);
+  transform-style: preserve-3d;
+}
+.cup {
+  background: #ff4569;
+  height: 250px;
+  width: 200px;
+  position: relative;
+  box-shadow: 2px 2px 30px;
+  border-radius: 5px;
+}
+.cup:before {
+  content: "";
+  position: absolute;
+  background: antiquewhite;
+  width: 100%;
+  height: 50px;
+  border-radius: 50%;
+  top: -19px;
+  border: 1px solid;
+  box-shadow: 1px 0px 2px;
+}
+.wave {
+  position: absolute;
+  /* background: rebeccapurple; */
+  height: 20px;
+  width: 20px;
+  left: 80px;
+  animation: move 5s linear infinite;
+  border-radius: 40%;
+  box-shadow: -3px 0px 1px white;
+  transform: rotateY(45deg);
+  filter: blur(1px);
+}
+.wave:before {
+  content: "";
+  position: absolute;
+  /* background: rebeccapurple; */
+  height: 20px;
+  width: 20px;
+  filter: blur(1px);
+
+  border-radius: 50%;
+  box-shadow: 3px 1px 1px white;
+  top: 14px;
+  left: -15px;
+}
+.wave2 {
+  top: -11px;
+  left: 20px;
+  animation-delay: 0.4s;
+}
+.wave3 {
+  top: -34px;
+  left: 120px;
+  animation-delay: 0.5s;
+}
+.wave4 {
+  top: -13px;
+  left: 172px;
+  animation-delay: 0.6s;
+}
+.wave5 {
+  top: -28px;
+  left: 54px;
+  animation-delay: 0.7s;
+}
+@keyframes move {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(1px);
+  }
+  100% {
+    transform: translateY(-80px);
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+.cup:after {
+  content: "";
+  position: absolute;
+  background: #ff4569;
+  width: 100%;
+  height: 74px;
+  bottom: -30px;
+  box-shadow: 0px 2px 3px;
+  border-radius: 50%;
+}
+.handle {
+  position: absolute;
+  background: transparent;
+  height: 100px;
+  width: 80px;
+  top: 55px;
+  right: -66px;
+  border-radius: 81px 13px 64px 27px;
+  border: 10px solid white;
+  outline: none;
+  z-index: -1;
+  box-shadow: 1px 0px 8px;
+}
+p {
+  position: absolute;
+  top: 75px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  text-shadow: 1px 1px 1px;
+  line-height: 1.5;
+}
